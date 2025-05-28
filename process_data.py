@@ -55,4 +55,4 @@ print("\nInformación del GeoDataFrame:")
 print(gdf.info())
 
 # Se guardan los datos procesados en un archivo GeoJSON
-gdf.to_file("arsat2_coverage.geojson", driver='GeoJSON')
+gdf.to_file("arsat2_cobertura.geojson", driver='GeoJSON')

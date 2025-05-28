@@ -3,7 +3,7 @@ from branca.colormap import linear
 import geopandas as gpd
 
 # Se cargan los datos del GeoJSON generado por process_data.py
-gdf = gpd.read_file('arsat2_coverage.geojson')
+gdf = gpd.read_file('arsat2_cobertura.geojson')
 
 # Se crea un mapa centrado en Sudamérica
 m = folium.Map(location=[-30, -60], zoom_start=4)
@@ -34,13 +34,13 @@ for _, row in gdf.iterrows():
             'weight': 1,
             'fillOpacity': 0.5
         },
-        tooltip=f"ARSAT-2 Coverage (ID: {row['id']})"
+        tooltip=f"ARSAT-2 Cobertura (ID: {row['id']})"
     ).add_to(m)
 
 # Se añade control de capas
 folium.LayerControl().add_to(m)
 
 # Se guarda el mapa como archivo HTML
-m.save('arsat2_coverage_map.html')
+m.save('arsat2_cobertura_map.html')
 
-print("Mapa interactivo creado y guardado como 'arsat2_coverage_map.html'")
+print("Mapa interactivo creado y guardado como 'arsat2_cobertura_map.html'")
